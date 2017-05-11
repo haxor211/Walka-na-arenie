@@ -1,3 +1,16 @@
+body {
+	background-image: url('../img/back.jpg');
+	background-size: cover;
+}
+h1 {
+	padding: 30px 0px;
+	text-align: center;
+	font-family: 'MedievalSharp', cursive;
+}
+.container {
+	background: rgba(255, 255, 255, 0.31);
+    padding: 20px;
+}
 #okienko {
     background-color: black;
     border-width: 4px;
@@ -27,15 +40,11 @@
 }
 
 #defend {
-    display: block;
-    margin-left: 100px;
-    margin-top: -32%;
-    height: auto;
 	float: right;
 }
 #attack, #defend {
 	margin-top: 20px;
-	width: 200px;
+	width: 100px;
 	cursor:pointer;
 
 }
