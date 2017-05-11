@@ -18,12 +18,12 @@ $(document).ready(function () {
             log(npc.name + ' blok');    
         }
 
-        if (user.hit() == true) {                         // Sprawdza czy player trafil
+        if (user.hit() == true) {                        // Sprawdza czy player trafil
 
             var dmgToNpc = (user.damage() * npcBlock);   // To jest dmg usera
             npc.hp = npc.hp - dmgToNpc;                  // Tutaj odejmuje dmg playera od hp npc'a
             log('Trafiles ' + npc.name + 'a' + ' za ' + dmgToNpc + ' hp');
-            if (npcAction == 'block') { //Jezeli npc zablokowal
+            if (npcAction == 'block') {                 //Jezeli npc zablokowal
                 log(npc.name + ' zablokowal ' + npcBlock);
             }
         } else {
@@ -52,28 +52,38 @@ $(document).ready(function () {
         // Liczy ile razy bylo klikniete i pozniej zwraca 0
         
         licznik += 1;
-        if (licznik == 4) {
+        if (licznik >= 4) {
             clearLog();
             return licznik = 0;
         };
     });
 
-    // Jezeli Player nacisnie Defend
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+        // Jezeli Player nacisnie Defend
 
     $('#defend').click(function () {
-        var npcAction = npc.action();
-
+        var npcAction = npc.action();   
+        var userBlock = Math.floor(Math.random() * 2)
+        
+        log(user.name + ' blokuje');
+        
         if (npcAction == 'attack') {    //Jezeli npc zaatakowal
 
-            if (npc.hit() == true) {    //Jezeli npc trafil
-                var dmgToUser = npc.damage();   //zmienna ile dmg npc zadal
-                user.hp -= dmgToUser;           //odejmuje hp playerowi
+            if (npc.hit() == true) {                          //Jezeli npc trafil
+                var dmgToUser = (npc.damage() * userBlock);   //zmienna ile dmg npc zadal
+                user.hp -= dmgToUser;                         //odejmuje hp playerowi
                 log(npc.name + ' trafil cie ' + ' za ' + dmgToUser);
             }
         }
+
+        log(user.name + ' ' + user.hp + 'hp left');
+        log(npc.name + ' ' + npc.hp + 'hp left');
+
         // Liczy ile razy bylo klikniete i pozniej zwraca 0   
+        
         licznik += 1;
-        if (licznik == 6) {
+        if (licznik >= 4) {
             clearLog();
             return licznik = 0;
         };
@@ -101,7 +111,7 @@ var player = function (name, hp, armor, stamina) {   //Obiekt Player
         return Math.floor(Math.random() * 2) == 1; //Zwraca 0 lub 1
     }
     this.damage = function () {  // Odpowiada za DMG
-        return Math.floor(Math.random() * 25);  //Zwraca od 0 do 15
+        return Math.floor(Math.random() * 35);  //Zwraca od 0 do 15
     }
 };
 
