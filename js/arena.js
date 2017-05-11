@@ -81,7 +81,7 @@ $(document).ready(function () {
         log(npc.name + ' ' + npc.hp + 'hp left');
 
         // Liczy ile razy bylo klikniete i pozniej zwraca 0   
-        
+
         licznik += 1;
         if (licznik >= 4) {
             clearLog();
@@ -146,6 +146,7 @@ var npc1 = new npc('Gladiator', 100, 0, 100); // Nowy obiekt npc1
 var npc2 = new npc('Gerald', 100, 2, 100);  // Nowy obiekt npc2
 var user = new player('Ajzak Niuton');
 var npc = npc1;
+
 
 /////////////////////////////////////////////////////////////////////
 
