@@ -67,23 +67,7 @@ $(document).ready(function () {
         //                  JEZELI KTOS STRACI HP <0                    //
         //////////////////////////////////////////////////////////////////
 
-        if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
-
-            $('#attack').css('display', 'none');
-            $('#defend').css('display', 'none'); //
-
-            if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose">' + 'You Lose' + '</div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
-                $('.you-lose').delay(3000).toggle('explode');
-
-            } else if (npc.hp <= 0) {
-                $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
-                $('.you-win').delay(3000).toggle('explode');
-
-            } $('#okienko').append('<div class="reload">' + 'Sproboj Jeszcze Raz' + '</div>').click(function () { // Okienko do odtworzenia gry
-                window.location.reload(); // Odswiez okno po kliknieciu
-            })
-        }
+        end();
 
         //////////////////////////////////////////////////////////////////
         // Liczy ile razy bylo klikniete i pozniej zwraca 0
@@ -136,26 +120,30 @@ $(document).ready(function () {
 
         // Liczy ile razy bylo klikniete i pozniej zwraca 0   
 
-        if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
-
-            $('#attack').css('display', 'none');
-            $('#defend').css('display', 'none'); //
-
-            if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose">' + 'You Lose' + '</div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
-                $('.you-lose').delay(3000).toggle('explode');
-
-            } else if (npc.hp <= 0) {
-                $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
-                $('.you-win').delay(3000).toggle('explode');
-
-            } $('#okienko').append('<div class="reload">' + 'Sproboj Jeszcze Raz' + '</div>').click(function () { // Okienko do odtworzenia gry
-                window.location.reload(); // Odswiez okno po kliknieciu
-            })
-        }        
+        end();
 
     })
 });
+
+var end = function () {
+    if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
+
+        $('#attack').css('display', 'none');
+        $('#defend').css('display', 'none'); //
+
+        if (user.hp <= 0) {
+            $('#okienko').append('<div class="you-lose">' + 'You Lose' + '</div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
+            $('.you-lose').delay(3000).toggle('explode');
+
+        } else if (npc.hp <= 0) {
+            $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
+            $('.you-win').delay(3000).toggle('explode');
+
+        } $('#okienko').append('<div class="reload">' + 'Sproboj Jeszcze Raz' + '</div>').click(function () { // Okienko do odtworzenia gry
+            window.location.reload(); // Odswiez okno po kliknieciu
+        })
+    }
+}
 
 var clearLog = function () { // Czysci napisy w okienku
     $('#okienko').html('');
