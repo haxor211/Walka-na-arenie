@@ -10,7 +10,8 @@ $(document).ready(function () {
     // Jezeli Player nacisnie Atak
 
     $('#attack').click(function () {
-
+        
+        
         $('#okienko').append('<div class="round round-attack"></div>')
 
         var npcBlock = 0;
@@ -18,17 +19,17 @@ $(document).ready(function () {
         var okienko = $('#okienko');
 
         if (npcAction == 'block') {  // Sprawdza czy npcAction() zwrocil 'blok'
-            npcBlock = Math.floor(Math.random() * 2); //ile dmg blokuje
+            npcBlock = Math.random() * 2; //ile dmg blokuje
             log(npc.name + ' blok');    
         }
 
         if (user.hit() == true) {                        // Sprawdza czy player trafil
 
-            var dmgToNpc = (user.damage() * npcBlock);   // To jest dmg usera
+            var dmgToNpc = Math.floor(user.damage() * npcBlock);   // To jest dmg usera
             npc.hp = npc.hp - dmgToNpc;                  // Tutaj odejmuje dmg playera od hp npc'a
             log('Trafiles ' + npc.name + 'a' + ' za ' + dmgToNpc + ' hp');
             if (npcAction == 'block') {                 //Jezeli npc zablokowal
-                log(npc.name + ' zablokowal ' + npcBlock);
+                log(npc.name + ' zablokowal ' + Math.floor(npcBlock));
             }
         } else {
 
@@ -62,7 +63,7 @@ $(document).ready(function () {
         licznik += 1;
         if (licznik >= 4) {
             clearLog();
-            return licznik = 0;
+            licznik = 0;
         };
     });
 
