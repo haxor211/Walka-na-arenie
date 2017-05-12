@@ -11,6 +11,11 @@ $(document).ready(function () {
 
     $('#attack').click(function () {
 
+        licznik += 1;
+        if (licznik >= 4) {
+            clearLog();
+            licznik = 0;
+        };
 
         $('#okienko').append('<div class="round round-attack"></div>')
 
@@ -69,26 +74,21 @@ $(document).ready(function () {
 
             if (user.hp <= 0) {
                 $('#okienko').append('<div class="you-lose">' + 'You Lose' + '</div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
-                    $('.you-lose').delay(3000).toggle('explode');
+                $('.you-lose').delay(3000).toggle('explode');
 
             } else if (npc.hp <= 0) {
                 $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
-                    $('.you-win').delay(3000).toggle('explode');
+                $('.you-win').delay(3000).toggle('explode');
 
-            } $('#okienko').append('div class="reload">' + 'test' + '</div>').click( function(){ // Okienko do odtworzenia gry
-                    window.location.reload(); // Odswiez okno po kliknieciu
-                })
+            } $('#okienko').append('div class="reload">' + 'Sproboj Jeszcze Raz' + '</div>').click(function () { // Okienko do odtworzenia gry
+                window.location.reload(); // Odswiez okno po kliknieciu
+            })
         }
 
         //////////////////////////////////////////////////////////////////
         // Liczy ile razy bylo klikniete i pozniej zwraca 0
         //////////////////////////////////////////////////////////////////
 
-        licznik += 1;
-        if (licznik >= 4) {
-            clearLog();
-            licznik = 0;
-        };
     });
 
     /////////////////////////////////////////////////////////////////////
@@ -104,6 +104,12 @@ $(document).ready(function () {
     //////////////////////////                                ///////////////////
 
     $('#defend').click(function () {
+
+        licznik += 1;
+        if (licznik >= 4) {
+            clearLog();
+            return licznik = 0;
+        };
 
         $('#okienko').append('<div class="round round-defend"></div>')
 
@@ -130,11 +136,6 @@ $(document).ready(function () {
 
         // Liczy ile razy bylo klikniete i pozniej zwraca 0   
 
-        licznik += 1;
-        if (licznik >= 4) {
-            clearLog();
-            return licznik = 0;
-        };
     })
 });
 
