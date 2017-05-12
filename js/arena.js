@@ -68,10 +68,12 @@ $(document).ready(function () {
             $('#defend').animate({ opacity: 0 }); //
 
             if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose"></div>').delay(2000).toggle('explode');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
+                $('#okienko').append('<div class="you-lose"></div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
+                    $('.you-lose').delay(2000).toggle('explode');
 
             } else if (npc.hp <= 0) {
                 $('#okienko').append('<div class="you-win"></div>').delay(2000).toggle('explode');    // dodaje diva you-win
+                    $('.you-win').delay(2000).toggle('explode');
 
             } setTimeout(function () {      // Odswieza okno (window)
                 window.location.reload();   //odswieza
