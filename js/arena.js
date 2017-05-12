@@ -76,9 +76,9 @@ $(document).ready(function () {
                 $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
                     $('.you-win').delay(2000).toggle('explode');
 
-            //} setTimeout(function () {      // Odswieza okno (window)
-            //    window.location.reload();   //odswieza
-            //}, 10000)                        // po 5 sekundach
+            } setTimeout(function () {      // Odswieza okno (window)
+                window.location.reload();   //odswieza
+            }, 100000)                        // po 5 sekundach
         }
 
         //////////////////////////////////////////////////////////////////
