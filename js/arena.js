@@ -80,7 +80,7 @@ $(document).ready(function () {
                 $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
                 $('.you-win').delay(3000).toggle('explode');
 
-            } $('#okienko').append('div class="reload">' + 'test' + '</div>').click(function () { // Okienko do odtworzenia gry
+            } $('#okienko').append('div class="reload">' + 'Sproboj Jeszcze Raz' + '</div>').click(function () { // Okienko do odtworzenia gry
                 window.location.reload(); // Odswiez okno po kliknieciu
             })
         }
