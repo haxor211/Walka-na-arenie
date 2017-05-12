@@ -42,22 +42,20 @@ h1 {
 	margin-left: 2.5%;
 	height:600px;
 }
-.you-lose:before {
+.you-lose {
 	margin: auto;
 	position: absolute;
 	top: 50%; left: 0; right: 0;
-	content:"You Lose!";
 	text-align: center;
 	font-family: 'MedievalSharp', cursive;
 	text-shadow: 0px 0px 10px red;
 	color: wheat;
 	font-size: 60px;
 }
-.you-win:before {
+.you-win {
 	margin: auto;
 	position: absolute;
 	top: 50%; left: 0; right: 0;
-	content:"You Win!";
 	text-align: center;
 	font-family: 'MedievalSharp', cursive;
 	text-shadow: 0px 0px 10px red;
