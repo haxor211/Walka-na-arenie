@@ -30,9 +30,12 @@ h1 {
     color: green;
 	width: 75%;
 	float:left;
-	padding: 30px;
+	padding: 10px;
 	box-sizing: border-box;
 	position:relative;
+	font-family: 'MedievalSharp', cursive;
+    font-size: 1.3em;
+	text-align:center;
 }
 .left {
 	position:relative;
@@ -67,6 +70,32 @@ h1 {
 	text-shadow: 0px 0px 10px red;
 	color: wheat;
 	font-size: 60px;
+}
+.reload {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+    color: wheat;
+    background: green;
+    max-width: 240px;
+    font-size: 1.3em;
+    line-height: 40px;
+    font-family: 'MedievalSharp', cursive;
+    border-radius: 10px;
+    border: 2px solid #1bab1b;
+	cursor: pointer;
+}
+.round {
+    margin: 5px;
+    background: rgba(222, 222, 222, 0.08);
+    padding: 5px;
+}
+p {
+    margin: 0;
+    line-height: 1.5em;
 }
 #user-hp-bar, #npc-hp-bar {
 	width:100%;
