@@ -7,6 +7,7 @@ h1 {
 	text-align: center;
 	font-family: 'MedievalSharp', cursive;
 	text-shadow: 0px 0px 10px red;
+	color: wheat;
 }
 .container {
 	background: rgba(255, 255, 255, 0.31);
