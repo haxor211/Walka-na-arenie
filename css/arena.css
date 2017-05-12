@@ -43,7 +43,7 @@ h1 {
 #user-hp-bar, #npc-hp-bar {
 	width:100%;
 	position: absolute;
-	height:600px;
+	height:100%;
 	bottom:0;
 	transition: height 0.5s cubic-bezier(0.81, -0.7, 0.33, 1.61);
 }
