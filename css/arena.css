@@ -26,6 +26,7 @@ h1 {
 	float:left;
 	padding: 30px;
 	box-sizing: border-box;
+	position:relative;
 }
 .left {
 	position:relative;
@@ -41,15 +42,27 @@ h1 {
 	margin-left: 2.5%;
 	height:600px;
 }
-.you-lose {
-	width:100px;
-	height:100px;
-	background: red;
+.you-lose:before {
+	margin: auto;
+	position: absolute;
+	top: 50%; left: 0; right: 0;
+	content:"You Lose!";
+	text-align: center;
+	font-family: 'MedievalSharp', cursive;
+	text-shadow: 0px 0px 10px red;
+	color: wheat;
+	font-size: 60px;
 }
-.you-win {
-	width:100px;
-	height:100px;
-	background: green;
+.you-win:before {
+	margin: auto;
+	position: absolute;
+	top: 50%; left: 0; right: 0;
+	content:"You Win!";
+	text-align: center;
+	font-family: 'MedievalSharp', cursive;
+	text-shadow: 0px 0px 10px red;
+	color: wheat;
+	font-size: 60px;
 }
 #user-hp-bar, #npc-hp-bar {
 	width:100%;
