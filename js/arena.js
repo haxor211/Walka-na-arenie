@@ -68,14 +68,14 @@ $(document).ready(function () {
             $('#defend').animate({ opacity: 0 }); //
 
             if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose"></div>');   // dodaje diva you-lose
+                $('#okienko').append('<div class="you-lose"></div>').delay(2000).toggle('explode');   // dodaje diva you-lose
 
             } else if (npc.hp <= 0) {
                 $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
 
             } setTimeout(function () {      // Odswieza okno (window)
                 window.location.reload();   //odswieza
-            }, 5000)                        // po 5 sekundach
+            }, 10000)                        // po 5 sekundach
         }
 
         //////////////////////////////////////////////////////////////////
