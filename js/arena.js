@@ -10,8 +10,8 @@ $(document).ready(function () {
     // Jezeli Player nacisnie Atak
 
     $('#attack').click(function () {
-        
-        
+
+
         $('#okienko').append('<div class="round round-attack"></div>')
 
         var npcBlock = 0;
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         if (npcAction == 'block') {  // Sprawdza czy npcAction() zwrocil 'blok'
             npcBlock = Math.random() * 2; //ile dmg blokuje
-            log(npc.name + ' blok');    
+            log(npc.name + ' blok');
         }
 
         if (user.hit() == true) {                        // Sprawdza czy player trafil
@@ -50,16 +50,38 @@ $(document).ready(function () {
             }
 
         };
-        
+
         //////////////////////////////// Dodaje zmiane hp (height) do css
         hpReduce();
         //////////////////////////////////////////////////////////////////
 
         log(user.name + ' ' + user.hp + 'hp left');
         log(npc.name + ' ' + npc.hp + 'hp left');
-    
+
+        //////////////////////////////////////////////////////////////////
+        //                  JEZELI KTOS STRACI HP <0                    //
+        //////////////////////////////////////////////////////////////////
+
+        if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
+
+            $('#attack').animate({ opacity: 0 }); // znikaja okienka
+            $('#defend').animate({ opacity: 0 }); //
+
+            if (user.hp <= 0) {
+                $('#okienko').append('<div class="you-lose"></div>');   // dodaje diva you-lose
+
+            } else if (npc.hp <= 0) {
+                $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
+
+            } setTimeout(function () {      // Odswieza okno (window)
+                window.location.reload();   //odswieza
+            }, 5000)                        // po 5 sekundach
+        }
+
+        //////////////////////////////////////////////////////////////////
         // Liczy ile razy bylo klikniete i pozniej zwraca 0
-        
+        //////////////////////////////////////////////////////////////////
+
         licznik += 1;
         if (licznik >= 4) {
             clearLog();
@@ -67,27 +89,27 @@ $(document).ready(function () {
         };
     });
 
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-/////           HP REDUCE               ////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    /////           HP REDUCE               ////////////////////////////
 
-    var hpReduce = function() {
+    var hpReduce = function () {
         $('#user-hp-bar').css('height', user.hp + '%');
         $('#npc-hp-bar').css('height', npc.hp + '%');
     };
 
-/////////////////////////// Jezeli Player nacisnie Defend ////////////////////
-//////////////////////////                                ///////////////////
+    /////////////////////////// Jezeli Player nacisnie Defend ////////////////////
+    //////////////////////////                                ///////////////////
 
     $('#defend').click(function () {
-        
+
         $('#okienko').append('<div class="round round-defend"></div>')
 
-        var npcAction = npc.action();   
+        var npcAction = npc.action();
         var userBlock = Math.floor(Math.random() * 2)
-        
+
         log(user.name + ' blokuje');
-        
+
         if (npcAction == 'attack') {    //Jezeli npc zaatakowal
 
             if (npc.hit() == true) {                          //Jezeli npc trafil
@@ -119,7 +141,7 @@ var clearLog = function () { // Czysci napisy w okienku
 }
 
 var log = function (log) { // Pisze w div classa Round
-        $('.round:last').append('<p>' + log + '</p>');
+    $('.round:last').append('<p>' + log + '</p>');
 }
 
 var logOkienko = function (log) {   //Pisze w okienku (wiadomosc powitalna)
