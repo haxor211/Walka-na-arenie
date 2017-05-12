@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+	<head>
 
 		<title>Bootstrap 101 Template</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,30 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href='css/arena.css' rel='stylesheet'>
 		<link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
-	  </head>
-	  <body>
+	</head>
+	<body>
 	  	<div class="container">
-		<h1>Dragon Slayer Arena 2000</h1>
-			<div class="main">
-		<div id='okienko'></div>
-		<div id='player-hp'>100hp</div>
+			<h1>Dragon Slayer Arena 2000</h1>
+				<div class="main">
+					<div class="left">
+						<div class="user-hp-bar"></div>
+					</div>
+					<div id='okienko'></div>
+					<div class="right">
+						<div class="npc-hp-bar"></div>
+					</div>
+					<!--div id='player-hp'>100hp</div-->
+			</div>
+				<div id='attack'>
+					<img src="https://cdn0.iconfinder.com/data/icons/world-of-warcraft-wow-faction-and-class/199/Warrior-256.png"/>
+				</div>
+				<div id='defend'>
+					<img src='https://bnetcmsus-a.akamaihd.net/cms/gallery/5I545IEVYC4D1446664591227.png'/>
+				</div>
+			<progress id="health" value="100" max="100"></progress>
 		</div>
-		  <div id='attack'>
-			<img src="https://cdn0.iconfinder.com/data/icons/world-of-warcraft-wow-faction-and-class/199/Warrior-256.png"/>
-		  </div>
-		  <div id='defend'>
-			<img src='https://bnetcmsus-a.akamaihd.net/cms/gallery/5I545IEVYC4D1446664591227.png'/>
-		  </div>
-		<progress id="health" value="100" max="100"></progress>
-	</div>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/arena.js"></script>
-  </body>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/arena.js"></script>
+	</body>
 </html>

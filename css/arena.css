@@ -22,11 +22,37 @@ h1 {
     box-shadow: 3px 3px 10px #bbb;
     color: green;
 	width: 75%;
-	float:right;
+	float:left;
 	padding: 30px;
 	box-sizing: border-box;
 }
-
+.left {
+	position:relative;
+	float:left;
+	width: 10%;
+	margin-right: 2.5%;
+	height:600px;
+}
+.right {
+	position:relative;
+	float:right;
+	width: 10%;
+	margin-left: 2.5%;
+	height:600px;
+}
+.user-hp-bar, .npc-hp-bar {
+	width:100%;
+	position: absolute;
+	height:600px;
+	bottom:0;
+	transition: height 0.5s cubic-bezier(0.81, -0.7, 0.33, 1.61);
+}
+.user-hp-bar {
+	background:green;
+}
+.npc-hp-bar {
+	background:red;
+}
 #player-hp {
     width: 20%;
     height: 50px;
