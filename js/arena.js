@@ -64,9 +64,8 @@ $(document).ready(function () {
 
         if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
 
-            //$('#attack').animate({ opacity: 0 }); // znikaja okienka
-            $('#attack').addClass('display: none');
-            $('#defend').animate({ opacity: 0 }); //
+            $('#attack').css('display', 'none');
+            $('#defend').css('display', 'none'); //
 
             if (user.hp <= 0) {
                 $('#okienko').append('<div class="you-lose"></div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
