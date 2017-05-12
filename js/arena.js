@@ -64,7 +64,6 @@ $(document).ready(function () {
 
         if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
 
-            //$('#attack').animate({ opacity: 0 }); // znikaja okienka
             $('#attack').css('display', 'none');
             $('#defend').css('display', 'none'); //
 
