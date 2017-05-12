@@ -8,6 +8,7 @@ h1 {
 	font-family: 'MedievalSharp', cursive;
 	text-shadow: 0px 0px 10px red;
 	color: wheat;
+	font-size: 60px;
 }
 .container {
 	background: rgba(255, 255, 255, 0.31);
@@ -43,7 +44,7 @@ h1 {
 #user-hp-bar, #npc-hp-bar {
 	width:100%;
 	position: absolute;
-	height:600px;
+	height:100%;
 	bottom:0;
 	transition: height 0.5s cubic-bezier(0.81, -0.7, 0.33, 1.61);
 }
@@ -63,11 +64,12 @@ h1 {
 }
 
 #attack {
-	margin-left: 25%;
+	margin-left: 15%;
 	float: left;
 }
 
 #defend {
+	margin-right: 15%;
 	float: right;
 }
 #attack, #defend {
