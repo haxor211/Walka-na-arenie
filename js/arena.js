@@ -3,14 +3,16 @@ $(document).ready(function () {
     // @ts-ignore
     // Welcome Msg
 
-    log('Witaj na arenie Dragon Slayer!');
-    log('Dzisiaj bedziesz napierdalal sie z ' + npc1.name + 'em' + ' oraz ' + npc2.name + 'em');
-    log('Powodzenia ' + user.name + '!');
+    logOkienko('Witaj na arenie Dragon Slayer!');
+    logOkienko('Dzisiaj bedziesz napierdalal sie z ' + npc1.name + 'em' + ' oraz ' + npc2.name + 'em');
+    logOkienko('Powodzenia ' + user.name + '!');
 
     // Jezeli Player nacisnie Atak
 
     $('#attack').click(function () {
-        //$('.round').append('<p></p>');
+
+        $('#okienko').append('<div class="round round-attack"></div>')
+
         var npcBlock = 0;
         var npcAction = npc.action();
 
@@ -64,6 +66,9 @@ $(document).ready(function () {
         // Jezeli Player nacisnie Defend
 
     $('#defend').click(function () {
+        
+        $('#okienko').append('<div class="round round-defend"></div>')
+
         var npcAction = npc.action();   
         var userBlock = Math.floor(Math.random() * 2)
         
@@ -95,9 +100,12 @@ var clearLog = function () { // Czysci napisy w okienku
     $('#okienko').html('');
 }
 
-var log = function (log) { // Wyswietla napis w okienku
-    $('#okienko').append('<p></p>');
-    $('#okienko').append('<div class="round"></div>')
+var log = function (log) { // Pisze w div classa Round
+        $('.round:last').append('<p>' + log + '</p>');
+}
+
+var logOkienko = function (log) {   //Pisze w okienku (wiadomosc powitalna)
+    $('#okienko').append('<p>' + log + '</p>');
 }
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
