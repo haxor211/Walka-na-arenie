@@ -10,6 +10,7 @@ $(document).ready(function () {
     // Jezeli Player nacisnie Atak
 
     $('#attack').click(function () {
+        //$('.round').append('<p></p>');
         var npcBlock = 0;
         var npcAction = npc.action();
 
@@ -95,7 +96,8 @@ var clearLog = function () { // Czysci napisy w okienku
 }
 
 var log = function (log) { // Wyswietla napis w okienku
-    $('#okienko').append('<p>' + log + '</p>')
+    $('#okienko').append('<p></p>');
+    $('#okienko').append('<div class="round"></div>')
 }
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
