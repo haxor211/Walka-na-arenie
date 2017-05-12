@@ -64,7 +64,8 @@ $(document).ready(function () {
 
         if (user.hp <= 0 || npc.hp <= 0) { // Co sie dzieje gdy ktos straci hp 0 lub ponizej
 
-            $('#attack').animate({ opacity: 0 }); // znikaja okienka
+            //$('#attack').animate({ opacity: 0 }); // znikaja okienka
+            $('#attack').addClass('display: none');
             $('#defend').animate({ opacity: 0 }); //
 
             if (user.hp <= 0) {
@@ -75,9 +76,9 @@ $(document).ready(function () {
                 $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
                     $('.you-win').delay(2000).toggle('explode');
 
-            } setTimeout(function () {      // Odswieza okno (window)
-                window.location.reload();   //odswieza
-            }, 10000)                        // po 5 sekundach
+            //} setTimeout(function () {      // Odswieza okno (window)
+            //    window.location.reload();   //odswieza
+            //}, 10000)                        // po 5 sekundach
         }
 
         //////////////////////////////////////////////////////////////////
