@@ -68,16 +68,16 @@ $(document).ready(function () {
             $('#defend').css('display', 'none'); //
 
             if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose"></div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
-                    $('.you-lose').delay(2000).toggle('explode');
+                $('#okienko').append('<div class="you-lose">' + 'You Lose' + '</div>');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
+                    $('.you-lose').delay(3000).toggle('explode');
 
             } else if (npc.hp <= 0) {
-                $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
-                    $('.you-win').delay(2000).toggle('explode');
+                $('#okienko').append('<div class="you-win">' + 'You Win' + '</div>');    // dodaje diva you-win
+                    $('.you-win').delay(3000).toggle('explode');
 
-            } setTimeout(function () {      // Odswieza okno (window)
-                window.location.reload();   //odswieza
-            }, 100000)                        // po 5 sekundach
+            } $('#okienko').append('div class="reload">' + 'test' + '</div>').click( function(){ // Okienko do odtworzenia gry
+                    window.location.reload(); // Odswiez okno po kliknieciu
+                })
         }
 
         //////////////////////////////////////////////////////////////////
