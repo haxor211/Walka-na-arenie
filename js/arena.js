@@ -72,7 +72,7 @@ $(document).ready(function () {
                     $('.you-lose').delay(2000).toggle('explode');
 
             } else if (npc.hp <= 0) {
-                $('#okienko').append('<div class="you-win"></div>').delay(2000).toggle('explode');    // dodaje diva you-win
+                $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
                     $('.you-win').delay(2000).toggle('explode');
 
             } setTimeout(function () {      // Odswieza okno (window)
