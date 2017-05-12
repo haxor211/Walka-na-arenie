@@ -41,6 +41,16 @@ h1 {
 	margin-left: 2.5%;
 	height:600px;
 }
+.you-lose {
+	width:100px;
+	height:100px;
+	background: red;
+}
+.you-win {
+	width:100px;
+	height:100px;
+	background: green;
+}
 #user-hp-bar, #npc-hp-bar {
 	width:100%;
 	position: absolute;
