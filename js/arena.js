@@ -68,7 +68,7 @@ $(document).ready(function () {
             $('#defend').animate({ opacity: 0 }); //
 
             if (user.hp <= 0) {
-                $('#okienko').append('<div class="you-lose"></div>').delay(2000).toggle('explode');   // dodaje diva you-lose
+                $('#okienko').append('<div class="you-lose"></div>').delay(2000).toggle('explode');   // dodaje diva you-lose i czeka 2 sekundy poczym eksploduje
 
             } else if (npc.hp <= 0) {
                 $('#okienko').append('<div class="you-win"></div>');    // dodaje diva you-win
