@@ -8,6 +8,7 @@ h1 {
 	font-family: 'MedievalSharp', cursive;
 	text-shadow: 0px 0px 10px red;
 	color: wheat;
+	font-size: 60px;
 }
 .container {
 	background: rgba(255, 255, 255, 0.31);
