@@ -15,6 +15,7 @@ $(document).ready(function () {
 
         var npcBlock = 0;
         var npcAction = npc.action();
+        var okienko = $('#okienko');
 
         if (npcAction == 'block') {  // Sprawdza czy npcAction() zwrocil 'blok'
             npcBlock = Math.floor(Math.random() * 2); //ile dmg blokuje
@@ -49,9 +50,13 @@ $(document).ready(function () {
 
         };
         
+        //////////////////////////////// Dodaje zmiane hp (height) do css
+        hpReduce();
+        //////////////////////////////////////////////////////////////////
+
         log(user.name + ' ' + user.hp + 'hp left');
         log(npc.name + ' ' + npc.hp + 'hp left');
-        
+    
         // Liczy ile razy bylo klikniete i pozniej zwraca 0
         
         licznik += 1;
@@ -63,7 +68,14 @@ $(document).ready(function () {
 
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-        // Jezeli Player nacisnie Defend
+
+    var hpReduce = function() {
+        $('#user-hp-bar').css('height', user.hp + 'px');
+        $('#npc-hp-bar').css('height', npc.hp + 'px');
+    };
+
+/////////////////////////// Jezeli Player nacisnie Defend ////////////////////
+//////////////////////////                                ///////////////////
 
     $('#defend').click(function () {
         
@@ -82,6 +94,10 @@ $(document).ready(function () {
                 log(npc.name + ' trafil cie ' + ' za ' + dmgToUser);
             }
         }
+
+        //////////////////////////////// Dodaje zmiane hp (height) do css
+        hpReduce();
+        //////////////////////////////////////////////////////////////////
 
         log(user.name + ' ' + user.hp + 'hp left');
         log(npc.name + ' ' + npc.hp + 'hp left');
