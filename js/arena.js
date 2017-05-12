@@ -68,10 +68,11 @@ $(document).ready(function () {
 
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
+/////           HP REDUCE               ////////////////////////////
 
     var hpReduce = function() {
-        $('#user-hp-bar').css('height', user.hp + 'px');
-        $('#npc-hp-bar').css('height', npc.hp + 'px');
+        $('#user-hp-bar').css('height', user.hp + '%');
+        $('#npc-hp-bar').css('height', npc.hp + '%');
     };
 
 /////////////////////////// Jezeli Player nacisnie Defend ////////////////////
