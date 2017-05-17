@@ -1,5 +1,5 @@
 // @ts-nocheck
-$(document).ready(function () {
+/*$(document).ready(function () {
     // @ts-ignore
     // Welcome Msg
 
@@ -208,5 +208,5 @@ var npc = npc1;
 
 
 /////////////////////////////////////////////////////////////////////
-
+*/
 
