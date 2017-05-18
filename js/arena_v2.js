@@ -19,18 +19,19 @@ var faderIndex = 0,
     faders = $('.story');
 
 var nextFade = function() {                                //Leci text story 1 po drugim
-        $(faders[faderIndex]).fadeOut(3000, function() {
+        $(faders[faderIndex]).fadeOut(4000, function() {
             faderIndex++;
-            $(faders[faderIndex]).fadeIn(2000, nextFade);
+            $(faders[faderIndex]).fadeIn(3000, nextFade);
         
-        var body = $('body');                               
-            body.one('click', function () {
-                body.append('<div id="overlay"></div>');    // Dodaje diva overlay ktorego nie da rady klikac
-                $('#overlay').fadeIn();                     
+        //var body = $('body');                               
+            //body.one('click', function () {
+                //body.append('<div id="overlay"></div>');    // Dodaje diva overlay ktorego nie da rady klikac
+                //$('#overlay').fadeIn();
+                //$('#overlay').delay(10000).fadeOut('fast');                     
                 //$(this).css("background-image", 'url("https://www.hackread.com/wp-content/uploads/2016/07/Amazon-kindle-servers-breached-hacked-2.png"')
                 // @ts-ignore
                 //$('.main').hide('drop', { direction: 'down' }, 'fast');
-            });
+            //});
         });
     }
 
@@ -42,6 +43,7 @@ var user = function (name, race, dmg, lvl, stamina, eq) {
     this.lvl = lvl;
     this.stamina = stamina;
     this.eq = eq;
+
 
 };
 
